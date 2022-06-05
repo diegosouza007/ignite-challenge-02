@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
-
-import { MovieCard } from './components/MovieCard';
 import { SideBar } from './components/SideBar';
 import { Content } from './components/Content';
-
 import { api } from './services/api';
-
 import './styles/global.scss';
 
 interface GenreResponseProps {
@@ -48,7 +44,7 @@ export function App() {
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
       <SideBar selectedGenreId={selectedGenreId} handleClickButton={handleClickButton}/>
-      <Content />
+      <Content movies={movies} selectedGenre={selectedGenre}/>
     </div>
   )
 }
